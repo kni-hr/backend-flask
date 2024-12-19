@@ -1,5 +1,5 @@
 from . import app, db
-from .auth import login_user, is_authenticated, get_uid
+from .auth import login_user, is_authenticated, get_uid, logout_user
 from .validators import validate_registration, validate_login
 from .utils import create_user
 from .models import Users
@@ -41,7 +41,7 @@ def post_register():
     if code: return code
     print(code)
     if not create_user(name, email, password1, user_type):
-        return "-1"
+        return "100"
     return ""
 
 @app.post('/login')
@@ -58,4 +58,9 @@ def post_login():
     if code: return code
     uid = db.session.query(Users).filter_by(email=email).first().uid
     login_user(uid)
+    return ""
+
+@app.get('/logout')
+def get_logout():
+    logout_user()
     return ""

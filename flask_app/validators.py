@@ -5,6 +5,7 @@ from .auth import check_password
 
 def validate_registration(name: str, email: str, password1: str, password2: str, user_type: str) -> str:
     """
+    RETURNS ERROR CODE
     function responds with "" or an error code:
     "1" blank fields,
     "2" passwords don't match,
@@ -25,6 +26,7 @@ def validate_registration(name: str, email: str, password1: str, password2: str,
 
 def validate_login(email: str, password: str) -> str:
     """
+    RETURNS ERROR CODE
     returns "" or an error code:
     "1" blank fields,
     "2" invalid credentials
