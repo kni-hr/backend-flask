@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="/register" method="post">
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email" placeholder="Email">
+        <input type="password" name="password1" placeholder="Password">
+        <input type="password" name="password2" placeholder="Repeat password">
+        <label>
+            <input type="radio" name="user-type" value="1"> HR Manager
+          </label>
+          <label>
+            <input type="radio" name="user-type" value="2"> Candidate
+          </label>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="/login">Login</a>
+</body>
+</html>
